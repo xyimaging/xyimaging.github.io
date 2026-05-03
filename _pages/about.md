@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <a href='https://engineering.vanderbilt.edu/departments/computer-science/'> Computer Science </a>. Vanderbilt University.
 
 profile:
   align: right
@@ -13,6 +13,8 @@ profile:
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
+
+service: "**Reviewer**: `NeurIPS`, `CVPR`, `MICCAI`, `MIDL`, `MIA`, `MELBA`"
 
 announcements:
   enabled: true # includes a list of news items
@@ -25,8 +27,19 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hello! This is **Xing Yao** (姚兴). I am a near-to-graduation CS Ph.D. candidate at [MedICL, Vanderbilt University](https://github.com/MedICL-VU), advised by [Prof. Ipek Oguz](https://www.vanderbilt.edu/vise/visepeople/ipek-oguz/). 
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My research lies at the intersection of **generative models, foundation models, and AI for healthcare**, with a focus on **2D/3D images/voxels and video understanding**. I am particularly interested in building **reliable and robust AI systems** that can operate under real-world clinical conditions.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+During my Ph.D., I have been working on bridging **advanced generative modeling techniques** with **practical clinical challenges**. I joined GE Healthcare as a summer research intern in 2024 and 2025, where I focused on developing **reliable ultrasound video generation models** for temporal super-resolution under large motion and noise, as well as **video segmentation foundation models** for high-diversity, multi-site ultrasound data. My work emphasizes **temporal consistency, robustness, and deployment readiness**, which are critical for real-world applications.
+
+Before joining Vanderbilt, I obtained my master's degree at [Duke University](https://bme.duke.edu/people/roarke-horstmeyer/), advised by Prof. Roarke Horstmeyer, and my bachelor's degree at Xi'an Jiaotong University.
+
+My research interests include:
+- Generative models for 2D/3D/video  
+- Foundation model development and adaptation
+- Vision-language models (VLM) and video reasoning  
+
+<span style="color: var(--global-theme-color); font-weight: bold;">
+I'm always open to research collaborations! If you're interested in working together, feel free to reach out at alexyao9977 [at] gmail.com!
+</span>
