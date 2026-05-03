@@ -33,7 +33,7 @@ My research lies at the intersection of **generative models, foundation models, 
 
 During my Ph.D., I have been working on bridging **advanced generative modeling techniques** with **practical clinical challenges**. I joined GE Healthcare as a summer research intern in 2024 and 2025, where I focused on developing **reliable ultrasound video generation models** for temporal super-resolution under large motion and noise, as well as **video segmentation foundation models** for high-diversity, multi-site ultrasound data. My work emphasizes **temporal consistency, robustness, and deployment readiness**, which are critical for real-world applications.
 
-Before joining Vanderbilt, I obtained my master's degree at [Duke University](https://bme.duke.edu/people/roarke-horstmeyer/), advised by Prof. Roarke Horstmeyer, and my bachelor's degree at Xi'an Jiaotong University.
+Before joining Vanderbilt, I obtained my master's degree at Duke University, advised by Prof. [Roarke Horstmeyer](https://bme.duke.edu/people/roarke-horstmeyer/), and my bachelor's degree at Xi'an Jiaotong University.
 
 My research interests include:
 - Generative models for 2D/3D/video  
