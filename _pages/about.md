@@ -6,7 +6,7 @@ subtitle: <a href='https://engineering.vanderbilt.edu/departments/computer-scien
 
 profile:
   align: right
-  image: prof_pic.png
+  image: prof_pic.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Nashville, Tennessee</p>
