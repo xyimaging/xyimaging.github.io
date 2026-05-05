@@ -31,7 +31,8 @@ Hello! This is **Xing Yao** (姚兴). I am a near-to-graduation CS Ph.D. candida
 
 I joined GE Healthcare as a summer research intern in 2024 and 2025, where I focused on developing **video generation models** for temporal super-resolution under large motion and noise, as well as **video segmentation foundation models** for high-diversity, multi-site ultrasound data.
 
-My research interests lie at the intersection of: 
+My research interests lie at the intersection of:
+
 - **Generative models for 2D/3D images/voxels and videos**
 - **Multimodal foundation models with uncertainty estimation/calibration**
 - **Vision-language models (VLM) and video reasoning**
