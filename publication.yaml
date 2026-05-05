@@ -1,0 +1,70 @@
+papers:
+  - key: yao2025towards        
+    selected: true
+    preview: sam2.png 
+    arxiv: "2511.05731"
+    pdf: https://arxiv.org/pdf/2511.05731
+    bibtex_show: true
+
+  - key: yao2026vfmstitch          
+    selected: true
+    preview: vfmstitch.png   
+    html: https://openreview.net/forum?id=nILVbV4aAZ#discussion
+    code: https://github.com/MedICL-VU/VFMStitch
+    pdf: https://openreview.net/pdf?id=nILVbV4aAZ
+    bibtex_show: true
+
+  - key: yao2025self         
+    selected: true
+    preview: ldm_video.png   
+    html: https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13406/134062S/Self-supervised-ultrasound-video-frame-interpolation-based-on-conditional-latent/10.1117/12.3047431.short
+    poster: ldm_video_poster.pdf
+    bibtex_show: true
+
+  - key: yao2025synstitch       
+    selected: true
+    preview: synstitch.png 
+    html: https://ieeexplore.ieee.org/abstract/document/10981027?casa_token=EwHIC9R22NcAAAAA:e2u-acAjghdLEahqmRE5pbSet7Q6YHFaOA8bvt4c1yKYv1eNzSGjLkTzr0zYs-rHbZeItnKllw
+    arxiv: "2411.06750"
+    pdf: https://arxiv.org/pdf/2411.06750
+    bibtex_show: true
+
+  - key: yao2025lotus         
+    selected: true
+    preview: lotus.png   
+    html: https://openreview.net/forum?id=EyaeQLYCZP
+    code: https://github.com/MedICL-VU/LOTUS
+    pdf: https://openreview.net/pdf?id=EyaeQLYCZP
+    bibtex_show: true
+
+  - key: yao2024fnpc        
+    selected: true
+    preview: sam.png 
+    html: https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12926/1292602/FNPC-SAM--uncertainty-guided-false-negative-positive-control-for/10.1117/12.3006867.short
+    arxiv: "2308.10382"
+    code: https://github.com/xyimaging/FNPC
+    pdf: https://arxiv.org/pdf/2308.10382
+    bibtex_show: true
+
+  - key: lou2023min      
+    selected: true
+    preview: minmax.png 
+    html: https://ieeexplore.ieee.org/abstract/document/10098633
+    arxiv: "2203.15177"
+    code: https://github.com/AngeLouCN/Min_Max_Similarity
+    pdf: https://arxiv.org/pdf/2203.15177
+    bibtex_show: true
+
+  - key: yao2026geometry        
+    selected: false
+    preview: pcd_spie.png 
+    html: https://www-spiedigitallibrary-org.proxy.library.vanderbilt.edu/conference-proceedings-of-spie/13925/139252F/From-geometry-to-intensity--a-coarse-to-fine-pipeline/10.1117/12.3086611.full
+    poster: pcd_poster.pdf
+    bibtex_show: true
+
+  - key: yao2022increasing         
+    selected: true
+    preview: microscope.jpg  
+    html: https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-2-1745#articleFigures
+    bibtex_show: true
+

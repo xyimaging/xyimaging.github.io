@@ -7,14 +7,13 @@ first_name: Xing (Alex)
 middle_name:
 last_name: Yao
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+  Email is the best way to reach me for collaboration and opportunities.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Ph.D. candidate in computer science (Vanderbilt). Research: generative models for medical imaging and video, multimodal foundation models, and vision-language models.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+keywords: Xing Yao, medical imaging, generative models, video understanding, computer vision, machine learning, Vanderbilt, MedICL
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -91,8 +90,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: Xing Yao # blog_name will be displayed in your blog page
+blog_description: Notes on research, code, and academic life
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -279,8 +278,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Yao]
+  first_name: [Xing, X.]
 
   style: apa
   locale: en

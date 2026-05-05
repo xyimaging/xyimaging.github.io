@@ -4,6 +4,6 @@
 cv_pdf: /assets/pdf/XingYao_CV.pdf # path to your CV PDF file
 email: alexyao9977@gmail.com # your email address
 scholar_userid: QPEhFegAAAAJ # your Google Scholar ID
-github_user: xyimaging # Your GitHub username
-linkedin_user: xing-yao-2205b1191 # Your LinkedIn profile
+github_username: xyimaging # Your GitHub username
+linkedin_username: xing-yao-2205b1191 # Your LinkedIn profile
 rss_icon: true # comment this line to hide the RSS icon

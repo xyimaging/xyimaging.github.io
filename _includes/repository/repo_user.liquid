@@ -19,15 +19,19 @@
 {% endcase %}
 
 <div class="repo p-2 text-center">
-  <a href="https://github.com/{{ include.username }}">
+  <a href="https://github.com/{{ include.username }}" aria-label="GitHub user {{ include.username }}">
+    <div class="mb-1">
+      <i class="fa-brands fa-github"></i>
+      {{ include.username }}
+    </div>
     <img
       class="only-light w-100"
-      alt="{{ include.username }}"
+      alt=""
       src="{{ site.external_services.github_readme_stats_url }}/api/?username={{ include.username }}&theme={{ site.repo_theme_light }}&locale={{ lang }}&show_icons=true"
     >
     <img
       class="only-dark w-100"
-      alt="{{ include.username }}"
+      alt=""
       src="{{ site.external_services.github_readme_stats_url }}/api/?username={{ include.username }}&theme={{ site.repo_theme_dark }}&locale={{ lang }}&show_icons=true"
     >
   </a>
