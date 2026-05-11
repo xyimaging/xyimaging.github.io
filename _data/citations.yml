@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-05-04'
+  last_updated: '2026-05-11'
 papers:
   QPEhFegAAAAJ:2osOgNQ5qMEC:
     citations: 5
@@ -86,7 +86,7 @@ papers:
     title: Novel application of the attention mechanism on medical image harmonization
     year: '2023'
   QPEhFegAAAAJ:Zph67rFs4hoC:
-    citations: 3
+    citations: 4
     title: Interactive segmentation model for placenta segmentation from 3d ultrasound images
     year: '2024'
   QPEhFegAAAAJ:_FxGoFyzp5QC:
@@ -102,15 +102,15 @@ papers:
     title: 'Synstitch: A self-supervised learning network for ultrasound image stitching using synthetic training pairs and indirect supervision'
     year: '2025'
   QPEhFegAAAAJ:d1gkVwhDpl0C:
-    citations: 24
+    citations: 25
     title: "Increasing a microscope\u2019s effective field of view via overlapped imaging and machine learning"
     year: '2022'
   QPEhFegAAAAJ:hMod-77fHWUC:
-    citations: 1
+    citations: 2
     title: 'Intuitive Surgical SurgToolLoc Challenge Results: 2022-2023'
     year: '2023'
   QPEhFegAAAAJ:kNdYIx-mwKoC:
-    citations: 24
+    citations: 25
     title: 'FNPC-SAM: uncertainty-guided false negative/positive control for SAM on noisy medical images'
     year: '2024'
   QPEhFegAAAAJ:k_IJM867U9cC:
@@ -130,6 +130,6 @@ papers:
     title: 'Vesselmorph: domain-generalized retinal vessel segmentation via shape-aware representation'
     year: '2023'
   QPEhFegAAAAJ:zYLM7Y9cAGgC:
-    citations: 89
+    citations: 90
     title: 'Min-max similarity: A contrastive semi-supervised deep learning network for surgical tools segmentation'
     year: '2023'
