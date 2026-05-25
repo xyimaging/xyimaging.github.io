@@ -218,7 +218,7 @@ What I think I learned: in retrieval-augmented systems, the retrieval component 
 
 I still don't know whether this finding generalizes beyond the specific setup I built. But I think the question — *when does pipeline complexity help?* — is a much more interesting and underspecified question than the literature currently treats it as.
 
-The code for everything described in this post is on GitHub: [AgentRAG-Eval](https://github.com/xyimaging/agentrag-eval). It runs on 100 HotpotQA questions in about 15 minutes and costs roughly $0.23. If you replicate it with different settings and get different results, I'd genuinely like to know.
+The code for everything described in this post is on GitHub: **[xyimaging/agentrag-eval](https://github.com/xyimaging/agentrag-eval)**. It runs on 100 HotpotQA questions in about 15 minutes and costs roughly $0.23. If you replicate it with different settings and get different results, I'd genuinely like to know.
 
 ---
 
