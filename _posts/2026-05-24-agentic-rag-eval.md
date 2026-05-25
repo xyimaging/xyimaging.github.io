@@ -126,9 +126,13 @@ The key finding:
 |---|---|
 | All three correct | 27 |
 | All three wrong | 47 |
-| Only Naive correct | 2 |
-| Only Agentic correct | 7 |
 | Naive+Self correct, Agentic wrong | 13 |
+| Only Agentic correct | 7 |
+| Naive+Agentic correct, Self wrong | 2 |
+| Only Naive correct | 2 |
+| Only Self correct | 1 |
+| Self+Agentic correct, Naive wrong | 1 |
+| **Total** | **100** |
 
 **Agentic RAG uniquely rescues 8 questions that Naive can't handle** — that's real. These are genuinely hard bridge questions where decomposition helps.
 
