@@ -11,14 +11,6 @@ toc:
   sidebar: left
 ---
 
-*Title candidates I considered before settling on this one:*
-- *"Why My Agentic RAG Performed Worse Than a Simple Baseline"*
-- *"More Reasoning, Worse Answers: What My RAG Experiment Taught Me"*
-- *"I Thought Decomposition Would Help My RAG. It Made Things Worse."*
-- *"The Dumb Baseline Beat My Agentic RAG System"*
-
----
-
 ## The Setup: A Week, Three Pipelines, One Benchmark
 
 A week ago I started a small research project with a simple question: **does more agentic complexity actually help RAG systems answer multi-hop questions better?**
@@ -30,6 +22,8 @@ So I built three systems. I ran them on 100 HotpotQA questions. I measured EM an
 **The simplest pipeline won. By every metric.**
 
 This post is my attempt to work through what happened and what I think it means.
+
+> **Code**: Everything described here is open-source at [xyimaging/agentrag-eval](https://github.com/xyimaging/agentrag-eval). It runs on 100 HotpotQA questions in ~15 minutes and costs roughly $0.23 in API credits.
 
 ---
 

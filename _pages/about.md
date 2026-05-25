@@ -33,10 +33,25 @@ I joined GE Healthcare as a summer research intern in 2024 and 2025, where I foc
 
 My research interests lie at the intersection of:
 
-- **Generative models for 2D/3D images/voxels and videos**
-- **Multimodal foundation models with uncertainty estimation/calibration**
-- **Vision-language models (VLM) and video reasoning**
+- **Multimodal foundation models** — vision-language, video, and medical imaging
+- **Reasoning and agentic AI systems** — RAG pipelines, tool-use, multi-step planning
+- **Adaptive LLM systems** — post-training, efficient fine-tuning, test-time compute scaling
+- **Trustworthy AI** — uncertainty estimation, calibration, robustness under distribution shift
 
 <span style="color: var(--global-theme-color); font-weight: bold;">
 I'm always open to research collaborations! If you're interested in working together, feel free to reach out at alexyao9977 [at] gmail.com!
 </span>
+
+---
+
+## Selected Blogs
+
+<ul>
+  <li>
+    <a href="/blog/2026/i-built-three-rag-systems-the-simplest-one-won/" target="_self"><strong>I Built Three RAG Systems. The Simplest One Won.</strong></a>
+    <br>
+    A week-long experiment comparing Naive, Self-Reflective, and Agentic RAG on multi-hop questions — and the counterintuitive results that made me rethink how retrieval actually works.
+    <br>
+    <em>May 2026</em>
+  </li>
+</ul>

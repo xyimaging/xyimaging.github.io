@@ -4,7 +4,7 @@ permalink: /publications/
 title: publications
 description: Selected publications. For the complete publication list, please visit my Google Scholar profile.
 nav: true
-nav_order: 1
+nav_order: 3
 ---
 
 <!-- _pages/publications.md -->
