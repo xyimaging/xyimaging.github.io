@@ -48,7 +48,7 @@ I'm always open to research collaborations! If you're interested in working toge
 
 <ul>
   <li>
-    <a href="/blog/2026/i-built-three-rag-systems-the-simplest-one-won/" target="_self"><strong>I Built Three RAG Systems. The Simplest One Won.</strong></a>
+    <a href="/blog/2026/agentic-rag-eval/" target="_self"><strong>I Built Three RAG Systems. The Simplest One Won.</strong></a>
     <br>
     A week-long experiment comparing Naive, Self-Reflective, and Agentic RAG on multi-hop questions — and the counterintuitive results that made me rethink how retrieval actually works.
     <br>
