@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-i-built-three-rag-systems-the-simplest-one-won",
+        },{id: "post-i-ran-the-same-experiment-on-7-models-and-5-datasets-the-story-got-stranger",
+        
+          title: "I Ran the Same Experiment on 7 Models and 5 Datasets. The Story...",
+        
+        description: "What started as a small RAG investigation turned into 105 experiments across 7 models and 5 benchmarks. The larger picture confirmed some things, broke others, and raised questions I didn&#39;t know to ask the first time.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/agentic-rag-eval-pt2/";
+          
+        },
+      },{id: "post-i-built-three-rag-systems-the-simplest-one-won",
         
           title: "I Built Three RAG Systems. The Simplest One Won.",
         
