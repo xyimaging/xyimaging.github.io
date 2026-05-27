@@ -417,12 +417,12 @@ Before scaling to 7 models, we ran a focused ablation comparing dense-only vs. B
 
 | Figure | What It Shows |
 |--------|---------------|
-| [fig1_full_heatmap_overall_f1.png](../assets/img/posts/agentrag-eval-pt2/fig1_full_heatmap_overall_f1.png) | Complete F1 heatmap: 7 models × 3 pipelines for each of 5 datasets |
-| [fig2_agentic_gain_by_dataset.png](../assets/img/posts/agentrag-eval-pt2/fig2_agentic_gain_by_dataset.png) | Agentic F1 gain across all datasets: mean ± std (left) and per-model (right) |
-| [fig3_cross_model_musique.png](../assets/img/posts/agentrag-eval-pt2/fig3_cross_model_musique.png) | All 7 models on MuSiQue: three pipelines side by side with Δ annotations |
-| [fig4_capability_vs_gain.png](../assets/img/posts/agentrag-eval-pt2/fig4_capability_vs_gain.png) | Model capability (Naive F1) vs. agentic gain scatter — H4 test |
-| [fig5_cross_dataset_per_model.png](../assets/img/posts/agentrag-eval-pt2/fig5_cross_dataset_per_model.png) | Cross-dataset profile for each model — does the multi-hop/single-hop pattern generalize? |
-| [fig6_closed_vs_open.png](../assets/img/posts/agentrag-eval-pt2/fig6_closed_vs_open.png) | Closed-source vs. open-weight model group comparison on reliable datasets |
-| [fig7_cost_efficiency.png](../assets/img/posts/agentrag-eval-pt2/fig7_cost_efficiency.png) | Cost vs. F1 — color = model identity, shape = pipeline |
-| [fig8_self_rag_position.png](../assets/img/posts/agentrag-eval-pt2/fig8_self_rag_position.png) | H3 test: does self-reflective actually sit between naive and agentic? |
-| [fig9_summary_dashboard.png](../assets/img/posts/agentrag-eval-pt2/fig9_summary_dashboard.png) | 4-panel overview: MuSiQue comparison, agentic gain summary, HotpotQA, naive vs agentic scatter |
+| [fig1_full_heatmap_overall_f1.png](/assets/img/posts/agentrag-eval-pt2/fig1_full_heatmap_overall_f1.png) | Complete F1 heatmap: 7 models × 3 pipelines for each of 5 datasets |
+| [fig2_agentic_gain_by_dataset.png](/assets/img/posts/agentrag-eval-pt2/fig2_agentic_gain_by_dataset.png) | Agentic F1 gain across all datasets: mean ± std (left) and per-model (right) |
+| [fig3_cross_model_musique.png](/assets/img/posts/agentrag-eval-pt2/fig3_cross_model_musique.png) | All 7 models on MuSiQue: three pipelines side by side with Δ annotations |
+| [fig4_capability_vs_gain.png](/assets/img/posts/agentrag-eval-pt2/fig4_capability_vs_gain.png) | Model capability (Naive F1) vs. agentic gain scatter — H4 test |
+| [fig5_cross_dataset_per_model.png](/assets/img/posts/agentrag-eval-pt2/fig5_cross_dataset_per_model.png) | Cross-dataset profile for each model — does the multi-hop/single-hop pattern generalize? |
+| [fig6_closed_vs_open.png](/assets/img/posts/agentrag-eval-pt2/fig6_closed_vs_open.png) | Closed-source vs. open-weight model group comparison on reliable datasets |
+| [fig7_cost_efficiency.png](/assets/img/posts/agentrag-eval-pt2/fig7_cost_efficiency.png) | Cost vs. F1 — color = model identity, shape = pipeline |
+| [fig8_self_rag_position.png](/assets/img/posts/agentrag-eval-pt2/fig8_self_rag_position.png) | H3 test: does self-reflective actually sit between naive and agentic? |
+| [fig9_summary_dashboard.png](/assets/img/posts/agentrag-eval-pt2/fig9_summary_dashboard.png) | 4-panel overview: MuSiQue comparison, agentic gain summary, HotpotQA, naive vs agentic scatter |

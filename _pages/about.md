@@ -48,6 +48,13 @@ I'm always open to research collaborations! If you're interested in working toge
 
 <ul>
   <li>
+    <a href="/blog/2026/agentic-rag-eval-pt2/" target="_self"><strong>I Ran the Same Experiment on 7 Models and 5 Datasets. The Story Got Stranger.</strong></a>
+    <br>
+    105 experiments across 7 models and 5 benchmarks. Agentic decomposition wins unanimously on MuSiQue, loses unanimously on KILT, and breaks unexpectedly on FRAMES — the task structure, not the pipeline, turns out to be the dominant variable.
+    <br>
+    <em>May 2026</em>
+  </li>
+  <li>
     <a href="/blog/2026/agentic-rag-eval/" target="_self"><strong>I Built Three RAG Systems. The Simplest One Won.</strong></a>
     <br>
     A week-long experiment comparing Naive, Self-Reflective, and Agentic RAG on multi-hop questions — and the counterintuitive results that made me rethink how retrieval actually works.
