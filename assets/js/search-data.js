@@ -39,7 +39,7 @@ ninja.data = [{
           },
         },{id: "post-4-000-papers-in-five-days-a-systematic-cvpr-2026-debrief",
         
-          title: "4,000 Papers in Five Days: A Systematic CVPR 2026 Debrief",
+          title: "4,000+ Papers in Five Days: A Systematic CVPR 2026 Debrief",
         
         description: "Denver, June 3–7. I spent the week walking between poster halls, sitting through oral sessions, and building a structured analysis pipeline to make sense of it all. This is what the conference looked like, from the big trends down to the medical AI papers I care most about.",
         section: "Posts",
