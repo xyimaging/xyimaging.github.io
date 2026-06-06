@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-i-ran-the-same-experiment-on-7-models-and-5-datasets-the-story-got-stranger",
+        },{id: "post-4-000-papers-in-five-days-a-systematic-cvpr-2026-debrief",
+        
+          title: "4,000 Papers in Five Days: A Systematic CVPR 2026 Debrief",
+        
+        description: "Denver, June 3–7. I spent the week walking between poster halls, sitting through oral sessions, and building a structured analysis pipeline to make sense of it all. This is what the conference looked like, from the big trends down to the medical AI papers I care most about.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/cvpr2026-debrief/";
+          
+        },
+      },{id: "post-i-ran-the-same-experiment-on-7-models-and-5-datasets-the-story-got-stranger",
         
           title: "I Ran the Same Experiment on 7 Models and 5 Datasets. The Story...",
         
