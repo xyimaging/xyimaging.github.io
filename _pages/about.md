@@ -48,6 +48,13 @@ I'm always open to research collaborations! If you're interested in working toge
 
 <ul>
   <li>
+    <a href="/blog/2026/cvpr2026-debrief/" target="_self"><strong>4,000+ Papers in Five Days: A Systematic CVPR 2026 Debrief</strong></a>
+    <br>
+    A structured analysis of CVPR 2026 covering topic trends, oral highlights, industry lab strategies (Google, Meta, Apple, Amazon, NVIDIA), Medical AI, VLMs, world models, and image registration — built with a systematic pipeline to make sense of the conference at scale.
+    <br>
+    <em>June 2026</em>
+  </li>
+  <li>
     <a href="/blog/2026/agentic-rag-eval-pt2/" target="_self"><strong>I Ran the Same Experiment on 7 Models and 5 Datasets. The Story Got Stranger.</strong></a>
     <br>
     105 experiments across 7 models and 5 benchmarks. Agentic decomposition wins unanimously on MuSiQue, loses unanimously on KILT, and breaks unexpectedly on FRAMES — the task structure, not the pipeline, turns out to be the dominant variable.
