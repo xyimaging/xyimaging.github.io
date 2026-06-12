@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-05-25'
+  last_updated: '2026-06-12'
 papers:
   QPEhFegAAAAJ:2P1L_qKh6hAC:
     citations: 0
@@ -38,7 +38,7 @@ papers:
     title: 'Cats v2: hybrid encoders for robust medical segmentation'
     year: '2024'
   QPEhFegAAAAJ:M3NEmzRMIkIC:
-    citations: 5
+    citations: 6
     title: 'CASC-AI: Consensus-aware self-corrective learning for cell segmentation with Noisy labels'
     year: '2025'
   QPEhFegAAAAJ:MXK_kJrjxJIC:
@@ -78,11 +78,11 @@ papers:
     title: 'Surgical tool classification and localization: results and methods from the miccai 2022 surgtoolloc challenge'
     year: '2023'
   QPEhFegAAAAJ:Y0pCki6q_DkC:
-    citations: 36
+    citations: 37
     title: Imaging across multiple spatial scales with the multi-camera array microscope
     year: '2023'
   QPEhFegAAAAJ:YOwf2qJgpHMC:
-    citations: 0
+    citations: 1
     title: 'PRISM Lite: A lightweight model for interactive 3D placenta segmentation in ultrasound'
     year: '2025'
   QPEhFegAAAAJ:YsMSGLbcyi4C:
@@ -94,7 +94,7 @@ papers:
     title: Interactive segmentation model for placenta segmentation from 3d ultrasound images
     year: '2024'
   QPEhFegAAAAJ:_FxGoFyzp5QC:
-    citations: 20
+    citations: 22
     title: 'Colossal: A benchmark for cold-start active learning for 3d medical image segmentation'
     year: '2023'
   QPEhFegAAAAJ:_Qo2XoVZTnwC:
@@ -121,6 +121,10 @@ papers:
     citations: 2
     title: Self-supervised ultrasound video frame interpolation based on conditional latent diffusion model
     year: '2025'
+  QPEhFegAAAAJ:ldfaerwXgEUC:
+    citations: 3
+    title: 'Medical Imaging 2024: Image Processing'
+    year: '2024'
   QPEhFegAAAAJ:maZDTaKrznsC:
     citations: 1
     title: Enhancing skin lesion classification using segmentation-based global-local feature fusion
