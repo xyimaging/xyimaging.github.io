@@ -48,6 +48,13 @@ I'm always open to research collaborations! If you're interested in working toge
 
 <ul>
   <li>
+    <a href="/blog/2026/agent-guided-medical-image-registration/" target="_self"><strong>I Built an Agent That Can Operate a 3D Medical Image Registration GUI</strong></a>
+    <br>
+    A research prototype combining rigid registration, visual overlays, metric-guided search, LLM tool use, and human anatomical guidance — plus the experiments that changed what I thought the agent should actually do.
+    <br>
+    <em>June 2026</em>
+  </li>
+  <li>
     <a href="/blog/2026/cvpr2026-debrief/" target="_self"><strong>4,000+ Papers in Five Days: A Systematic CVPR 2026 Debrief</strong></a>
     <br>
     A structured analysis of CVPR 2026 covering topic trends, oral highlights, industry lab strategies (Google, Meta, Apple, Amazon, NVIDIA), Medical AI, VLMs, world models, and image registration — built with a systematic pipeline to make sense of the conference at scale.
