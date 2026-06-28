@@ -41,7 +41,7 @@ ninja.data = [{
         
           title: "I Built an Agent That Can Operate a 3D Medical Image Registration GUI...",
         
-        description: "A research prototype that combines rigid registration, visual overlays, metric-guided search, LLM tool use, and human guidance—and the experiments that changed what I thought the agent should actually do.",
+        description: "A research prototype that combines rigid registration, visual overlays, metric-guided search, LLM tool use, two-stage visual planning, and human guidance—and the experiments that changed what I thought the agent should actually do.",
         section: "Posts",
         handler: () => {
           
