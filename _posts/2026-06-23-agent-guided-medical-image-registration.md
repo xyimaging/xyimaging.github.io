@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I Built an Agent That Can Operate a 3D Medical Image Registration GUI"
-description: A research prototype that combines rigid registration, visual overlays, metric-guided search, LLM tool use, and human guidance—and the experiments that changed what I thought the agent should actually do.
+description: A research prototype that combines rigid registration, visual overlays, metric-guided search, LLM tool use, two-stage visual planning, and human guidance—and the experiments that changed what I thought the agent should actually do.
 tags: medical-imaging registration agents LLM GUI human-in-the-loop
 categories: research
 date: 2026-06-23
@@ -15,7 +15,7 @@ toc:
 
 Let me start with the thing that took the longest to make look simple.
 
-{% include video.liquid path="assets/video/agent-guided-reg-demo.mp4" class="img-fluid rounded z-depth-1" controls=true poster="assets/img/posts/agent-guided-reg/gui-overview.png" title="Agent-Guided Reg interactive demo" alt="Demo of an agent operating a 3D medical image registration GUI" caption="A complete run of the current Agent-Guided Reg prototype. The in-page cursor loads a 3D MRI pair, creates a visible misalignment, runs metric-guided correction, and demonstrates landmark-based human guidance." %}
+{% include video.liquid path="assets/video/demo3.mp4" class="img-fluid rounded z-depth-1" controls=true poster="assets/img/posts/agent-guided-reg/gui-overview.png" title="Agent-Guided Reg two-stage visual demo" alt="Demo of a two-stage visual agent operating a 3D medical image registration GUI" caption="A live demo of the current Agent-Guided Reg prototype. The in-page cursor loads a 3D MRI pair, creates a visible rigid misalignment, selects the two-stage visual planner, sends sagittal/coronal/axial overlays to a vision model, and records the agent's visual and metric reasoning." %}
 
 This is **Agent-Guided Reg**, a browser-based prototype for agent-assisted 3D
 medical image registration. It loads volumetric medical images, displays
@@ -23,15 +23,19 @@ sagittal, coronal, and axial views, lets a user adjust a six-degree-of-freedom
 rigid transform, and gives an agent access to the same working state through
 structured tools.
 
-The demo is deliberately deterministic. It does not depend on a live model API:
-the on-screen agent uses a local metric-driven planner, operates the real GUI
-state, reports its actions, pauses when appropriate, and accepts human guidance.
-A separate LLM mode can receive the GUI state, candidate actions, metrics, and
-optionally screenshots, then return a structured action for the browser to
-execute.
+The current demo is no longer just a scripted slider tour. It shows a
+**two-stage visual planner** running through the GUI:
 
-That distinction—between a reliable demo and a live LLM experiment—became
-important as the project evolved.
+1. a visual observer inspects the current red-green overlays;
+2. an action planner compares that visual hypothesis with candidate metric
+   evidence;
+3. the browser executes one structured rigid-transform action;
+4. the GUI redraws the result and repeats the loop.
+
+That distinction matters. The goal is not to make a language model imitate a
+classical optimizer. The goal is to build an auditable registration assistant
+that can combine **what it sees**, **what the metric says**, and **what the user
+knows**.
 
 ---
 
@@ -99,10 +103,11 @@ metric calculation, action interface, and experiment logging before model
 behavior entered the picture.
 
 On the initial easy case, NCC improved from **0.6406 to 0.9948**, and the policy
-recovered all six ground-truth parameters exactly. I then expanded the test to
-six synthetic perturbations, including a harder mixed translation-and-rotation
-case. The deterministic baseline recovered **6/6 cases exactly**, increasing
-mean NCC from **0.6946 to 0.9969** with zero translation and rotation error.
+recovered all six ground-truth parameters exactly. I later expanded the
+same-modality benchmark to **18 synthetic cases** from six OASIS subjects, with
+small, medium, and large perturbations. The deterministic NCC coordinate search
+recovered **18/18 cases exactly**, with mean NCC improving from **0.6739 to
+0.9963** and zero translation/rotation error.
 
 {% include figure.liquid loading="eager" path="assets/img/posts/agent-guided-reg/red-green-overlay.png" class="img-fluid rounded z-depth-1" caption="A red-green overlay makes spatial disagreement immediately visible. Aligned structures become yellow; separated red and green edges reveal residual error." %}
 
@@ -217,13 +222,15 @@ After pausing and continuing, it reached about **0.991**.
 The important part is not that coordinate search is novel. It is that the
 planner updates the real interface, produces a visible and replayable action
 trace, and shares control with the user. This became the stable engine behind
-the recorded demo.
+the first recorded demo.
 
 I also added multiple strategies:
 
 - direct initialization;
 - metric stepwise refinement;
 - LLM tool agent;
+- visual LLM guided loop;
+- two-stage visual planner;
 - human-guided correction;
 - and an automatic mode that can route between them.
 
@@ -248,25 +255,144 @@ never be stored in the browser. The browser collected:
 The server sent this observation to a vision-capable model and requested one
 structured GUI action.
 
-The first attempt was revealing. When the model saw only the screenshots and
-current score, it returned `ask_human`. It was conservative because the images
-showed misalignment but did not provide a reliable quantitative direction.
-
-After I added the candidate metric table, the model selected real actions. In a
-two-step smoke test, it chose `translate x -8`, improving NCC from **0.6572 to
-0.7350**, then `translate y +1`, reaching **0.7569**.
-
-This was not competitive with the metric planner, and two actions are not a
-benchmark. But the full loop worked:
+The first useful result was not that the model became a better optimizer. It was
+that the model could participate in the closed loop:
 
 **visual observation → model decision → structured tool call → GUI execution →
 new observation**
 
-The model's most useful role currently looks less like “autonomous optimizer”
-and more like **strategy selector and uncertainty-aware reviewer**. Local metric
-search can provide reliable candidate actions; the visual model can interpret
-overlays, consider the user's intent, detect disagreement, and decide whether
-to refine, switch strategies, or ask for help.
+On the OASIS synthetic case, the final visual hybrid recovered the exact
+synthetic transform over 17 turns, improving NCC from **0.6405 to 0.9949**. But
+that result came with an important caveat: when candidate NCC scores were
+available, the model usually followed the metric-best candidate. The visual
+input made the loop richer and more interpretable, but the metric table still
+dominated the easy same-modality case.
+
+That is why I split visual reasoning and action selection into two explicit
+stages.
+
+---
+
+## Why I Split the Agent Into Two Stages
+
+In the original visual-agent call, the model returned two things at once:
+
+1. a written visual assessment;
+2. a structured action such as `translate x +1` or `rotate z -0.5`.
+
+That made the result hard to interpret. Did the written assessment actually
+influence the action? Or did the model simply read the candidate metric table,
+pick the best NCC update, and write a plausible explanation afterward?
+
+The **two-stage visual planner** makes this dependency more auditable.
+
+{% include figure.liquid loading="eager" path="assets/img/posts/agent-guided-reg/two-stage-visual-architecture.png" class="img-fluid rounded z-depth-1" caption="The current single-call visual agent co-generates a visual assessment and a tool call. The two-stage planner freezes a screenshot-only visual hypothesis first, then asks a separate planner to compare that hypothesis with candidate metrics before choosing an action." %}
+
+The loop is:
+
+1. Render sagittal, coronal, and axial red-green overlays.
+2. Send the overlays to a **Visual Observer**.
+3. The observer does **not** receive NCC or the candidate-action table.
+4. It returns a frozen visual hypothesis: per-view findings, residual direction,
+   anatomical cues, uncertainty, and confidence.
+5. Send that frozen hypothesis plus metric candidates to an **Action Planner**.
+6. The planner records the visual recommendation, metric recommendation,
+   agreement/conflict, confidence, and selected GUI tool.
+7. Local code executes the tool and applies the NCC safety gate.
+
+This is not just a software refactor. It changes what can be claimed. The model
+can now say:
+
+- “The sagittal view suggests posterior/anterior mismatch.”
+- “The axial view is ambiguous.”
+- “I see no reliable anatomical directional cue.”
+- “The visual hypothesis conflicts with the metric candidate table.”
+- “I will follow the metric because the image evidence is uncertain.”
+- “I should ask the human before continuing.”
+
+In the first calibrated two-stage smoke test, the Visual Observer abstained:
+all three views were reported as having no reliable directional cue, uncertainty
+was high, and confidence was 0.00. Stage 2 then transparently followed the
+metric-best candidate, selected `translate x -8`, and improved NCC from
+**0.6572 to 0.7350**. That was a small result, but it was exactly the kind of
+trace I wanted: the visual module was allowed to say “I do not know,” and the
+planner recorded why it trusted the metric instead.
+
+In the live GUI demo shown above, the same two-stage mode ran for five turns
+using `gpt-4o-mini`. Starting from a moderate synthetic misalignment, the loop
+sent the three-view overlays to the visual server each turn and improved NCC
+from **0.5634 to 0.6536**. This is a demo-scale result, not a benchmark result,
+but it demonstrates the full interactive pathway: visual observation,
+metric-aware planning, GUI action execution, and timeline export.
+
+---
+
+## What the Ablation Actually Showed
+
+I then ran four matched conditions on the same OASIS synthetic rigid case:
+
+| Condition | Visual input | Metric input | Outcome |
+|---|---:|---:|---|
+| Full | yes | yes | exact recovery, final NCC 0.9949 |
+| Metrics only | no | yes | exact recovery, final NCC 0.9949 |
+| Images only | yes | no | stalled, final NCC 0.7296, 15 rejected actions |
+| Full + human permission | yes | yes | paused at turn 12 with `askHuman`, final NCC 0.9663 |
+
+{% include figure.liquid loading="eager" path="assets/img/posts/agent-guided-reg/visual-ablation-four-condition-summary.png" class="img-fluid rounded z-depth-1" caption="Four-condition visual reasoning ablation. On this easy MRI case, candidate NCC dominated ordinary action selection: full and metrics-only recovered the transform, while images-only failed. The human-permission run is interesting because the model voluntarily paused when its visual interpretation became uncertain." %}
+
+This was a useful negative result. It prevents overclaiming.
+
+On this easy MRI case, visual input did **not** outperform candidate NCC. The
+full and metrics-only runs chose the same improving trajectory and both exactly
+recovered the synthetic transform. Images alone were not enough; the model
+matched the best metric candidate only once and then repeatedly proposed actions
+that the local safety gate rejected.
+
+The interesting behavior appeared when human guidance was permitted. At turn
+12, the model stopped with `askHuman`. Numerically, candidate actions were still
+available. Visually, the model reported residual mismatch but could not reliably
+decide whether the remaining correction should be translation or rotation. It
+changed its evidence source toward the image and reduced confidence.
+
+{% include figure.liquid loading="eager" path="assets/img/posts/agent-guided-reg/full-human-horizontal-timeline.png" class="img-fluid rounded z-depth-1" caption="A horizontal timeline from the human-permission visual run. The figure records NCC, actions, and sagittal/coronal/axial overlays across turns. The run pauses when the model requests human guidance instead of forcing another uncertain update." %}
+
+This is the current evidence for the value of the visual agent: not that it is a
+better local optimizer, but that it can expose uncertainty, compare visual and
+metric evidence, and create a structured place for human input.
+
+---
+
+## Early Multi-Case Pilot
+
+To avoid staring too long at a single friendly case, I also started a small
+multi-case pilot. The current pilot includes three OASIS subjects, three
+perturbation levels per subject, and three LLM-based modes with a short
+three-turn budget:
+
+- metrics-only LLM;
+- single-call visual LLM;
+- two-stage visual planner.
+
+{% include figure.liquid loading="eager" path="assets/img/posts/agent-guided-reg/multisubject-pilot-summary.png" class="img-fluid rounded z-depth-1" caption="A small multi-subject pilot across OASIS subjects and perturbation levels. The short-turn LLM modes currently produce similar numerical outcomes, while the two-stage mode uniquely records visual/metric conflicts and exposes several tool-format failures that need to be fixed before larger evaluation." %}
+
+The numerical results were intentionally modest. With only three turns, all
+three LLM modes reached the same mean final NCC of about **0.8131**, with mean
+translation error around **3.89 voxels** and mean rotation error around
+**4.55 degrees**. In contrast, the deterministic NCC baseline solved the larger
+18-case same-modality benchmark exactly.
+
+The two-stage planner did not win numerically in this pilot. Its value was
+instrumentation:
+
+- it recorded **5 visual/metric conflicts** across 9 cases;
+- it matched the metric-best candidate in 26/27 turns;
+- it exposed **4 malformed tool-call fallbacks**, which are engineering issues
+  to fix before scaling;
+- and it produced a richer trace for analyzing why an action was chosen.
+
+That is still progress. A research prototype should not only produce good
+numbers; it should also reveal why the current method fails, where it is leaning
+on the baseline, and which claims are not yet supported.
 
 ---
 
@@ -282,20 +408,20 @@ computes global NCC, it may continue rewarding the wrong region.
 That led me to add two more explicit forms of guidance.
 
 **Landmarks.** A user can click corresponding points in the fixed and moving
-images. One point pair provides a translation initialization; multiple pairs
-can later support a full rigid estimate. Landmark error also stays in the
-planner's objective as a soft constraint during refinement.
+images. One point pair provides a translation initialization; multiple pairs can
+later support a full rigid estimate. Landmark error also stays in the planner's
+objective as a soft constraint during refinement.
 
 **Segmentation masks.** Optional fixed and moving masks provide anatomical
 overlap signals such as Dice and centroid distance. The GUI displays their
 contours, and the metrics are included in both the local candidate objective and
 the LLM observation.
 
-The current combined objective is intentionally lightweight: reward NCC and
-mask overlap, penalize landmark and mask-centroid error. It is not a final
-clinical registration metric. What matters is the interface it establishes:
-human knowledge can enter the loop as a measurable constraint rather than
-remaining an informal comment.
+The current combined objective is intentionally lightweight: reward NCC and mask
+overlap, penalize landmark and mask-centroid error. It is not a final clinical
+registration metric. What matters is the interface it establishes: human
+knowledge can enter the loop as a measurable constraint rather than remaining an
+informal comment.
 
 This is especially important for the direction I ultimately care about:
 ultrasound and partial-overlap registration. Global intensity similarity is
@@ -311,20 +437,25 @@ The project has now crossed the line from an idea into a working research
 prototype:
 
 - the registration environment and structured action API work;
-- the deterministic baseline exactly solves the easy synthetic cases;
+- the deterministic baseline exactly solves easy same-modality synthetic cases;
 - LLM tool-calling experiments expose the importance of tool design;
 - the browser GUI supports real 3D interaction;
 - the metric planner operates the GUI and produces strong easy-case alignment;
 - a visual LLM can observe screenshots plus candidate metrics and return
   executable actions;
+- the two-stage visual planner separates screenshot-only observation from
+  metric-aware action selection;
+- visual/metric agreement, conflict, confidence, and uncertainty are now stored
+  in the trace;
 - landmarks, masks, and human hints can influence the loop;
-- and the full workflow is available as a repeatable demo.
+- and the full workflow is available as a repeatable visual demo.
 
-But the current evidence is still narrow. Most quantitative tests use one OASIS
-subject with synthetic same-modality rigid perturbations. The GUI currently
-uses voxel-based translations, and the browser and Python backends still need a
-fully unified convention for orientation, rotation order, transform direction,
-and physical coordinates.
+But the current evidence is still narrow. Most quantitative tests are
+same-modality OASIS MRI cases with synthetic rigid perturbations. The
+multi-subject visual pilot is still small and has a very short turn budget. The
+GUI currently uses voxel-based translations, and the browser and Python backends
+still need a fully unified convention for orientation, rotation order, transform
+direction, and physical coordinates.
 
 So the right claim is not:
 
@@ -356,6 +487,11 @@ actions determine what kinds of reasoning are practical.
 something is wrong without making the corrective direction obvious. Candidate
 metrics turned vague visual uncertainty into an actionable choice.
 
+**Two-stage reasoning makes uncertainty inspectable.** Freezing a
+screenshot-only hypothesis before showing metrics prevents the visual assessment
+from becoming an after-the-fact explanation. It lets the system record whether
+vision agrees with the metric, conflicts with it, or abstains.
+
 **Human-in-the-loop should be more than a chat box.** Landmarks, masks, and ROIs
 convert domain knowledge into geometry and measurable objectives.
 
@@ -368,20 +504,24 @@ matters. The agent's job is to make those capabilities cooperate.
 
 ## Where I Want to Go Next
 
-The next milestone is not a more theatrical demo. It is a cleaner benchmark.
+The next milestone is not a more theatrical demo. It is a cleaner benchmark and
+a more honest set of failure cases.
 
 I want to:
 
 1. unify transform conventions across the browser, Python backend, logs, and
    exported transforms;
 2. save complete replayable trajectories with actions, metrics, screenshots,
-   and uncertainty events;
-3. evaluate multiple OASIS subjects at small, medium, and large perturbations;
-4. compare deterministic search, GUI metric planning, visual LLM tool use, and
-   human-assisted runs;
-5. move to multimodal MRI and partial-overlap cases;
-6. implement coarse-to-fine and overlap-aware search;
-7. and test whether agent routing helps when metrics and visual evidence
+   visual hypotheses, conflicts, and uncertainty events;
+3. evaluate multiple OASIS subjects at small, medium, and large perturbations
+   with longer turn budgets;
+4. fix malformed tool-call fallbacks and harden the two-stage planner;
+5. compare deterministic search, GUI metric planning, single-call visual LLM,
+   two-stage visual planning, and human-assisted runs;
+6. move to multimodal MRI and partial-overlap cases;
+7. implement coarse-to-fine and overlap-aware search;
+8. add mask- and landmark-aware visual reasoning;
+9. and test whether agent routing helps when metrics and visual evidence
    disagree.
 
 The current prototype started with a simple ambition: let an agent move six
