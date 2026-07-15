@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-06-12'
+  last_updated: '2026-07-15'
 papers:
   QPEhFegAAAAJ:2P1L_qKh6hAC:
     citations: 0
@@ -10,8 +10,8 @@ papers:
     title: A multiple instance learning approach for detecting covid-19 in peripheral blood smears
     year: '2022'
   QPEhFegAAAAJ:35N4QoGY0k4C:
-    citations: 0
-    title: 'Demist: Decoupled Multi-Stream Latent Diffusion for Quantitative Myelin Map Synthesis'
+    citations: 1
+    title: 'Demist: decoupled multi-stream latent diffusion for quantitative myelin map synthesis'
     year: '2026'
   QPEhFegAAAAJ:3fE2CSJIrl8C:
     citations: 0
@@ -34,7 +34,7 @@ papers:
     title: Adaptive Spectral Estimation Improves Preeclampsia Prediction when using Short Pulsed Wave Doppler Acquisition Duration
     year: '2025'
   QPEhFegAAAAJ:LkGwnXOMwfcC:
-    citations: 6
+    citations: 8
     title: 'Cats v2: hybrid encoders for robust medical segmentation'
     year: '2024'
   QPEhFegAAAAJ:M3NEmzRMIkIC:
@@ -66,7 +66,7 @@ papers:
     title: 'Retinal IPA: Iterative KeyPoints Alignment for Multimodal Retinal Imaging'
     year: '2024'
   QPEhFegAAAAJ:UebtZRa9Y70C:
-    citations: 6
+    citations: 7
     title: 'MAP: Domain Generalization via Meta-Learning on Anatomy-Consistent Pseudo-Modalities'
     year: '2023'
   QPEhFegAAAAJ:W7OEmFMy1HYC:
@@ -78,7 +78,7 @@ papers:
     title: 'Surgical tool classification and localization: results and methods from the miccai 2022 surgtoolloc challenge'
     year: '2023'
   QPEhFegAAAAJ:Y0pCki6q_DkC:
-    citations: 37
+    citations: 38
     title: Imaging across multiple spatial scales with the multi-camera array microscope
     year: '2023'
   QPEhFegAAAAJ:YOwf2qJgpHMC:
@@ -94,7 +94,7 @@ papers:
     title: Interactive segmentation model for placenta segmentation from 3d ultrasound images
     year: '2024'
   QPEhFegAAAAJ:_FxGoFyzp5QC:
-    citations: 22
+    citations: 25
     title: 'Colossal: A benchmark for cold-start active learning for 3d medical image segmentation'
     year: '2023'
   QPEhFegAAAAJ:_Qo2XoVZTnwC:
@@ -118,11 +118,11 @@ papers:
     title: 'FNPC-SAM: uncertainty-guided false negative/positive control for SAM on noisy medical images'
     year: '2024'
   QPEhFegAAAAJ:k_IJM867U9cC:
-    citations: 2
+    citations: 3
     title: Self-supervised ultrasound video frame interpolation based on conditional latent diffusion model
     year: '2025'
   QPEhFegAAAAJ:ldfaerwXgEUC:
-    citations: 3
+    citations: 4
     title: 'Medical Imaging 2024: Image Processing'
     year: '2024'
   QPEhFegAAAAJ:maZDTaKrznsC:
@@ -134,10 +134,10 @@ papers:
     title: Self-supervised surgical instrument 3D reconstruction from a single camera image
     year: '2023'
   QPEhFegAAAAJ:ufrVoPGSRksC:
-    citations: 2
+    citations: 3
     title: 'Vesselmorph: domain-generalized retinal vessel segmentation via shape-aware representation'
     year: '2023'
   QPEhFegAAAAJ:zYLM7Y9cAGgC:
-    citations: 91
+    citations: 93
     title: 'Min-max similarity: A contrastive semi-supervised deep learning network for surgical tools segmentation'
     year: '2023'
