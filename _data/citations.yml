@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-07-15'
+  last_updated: '2026-08-03'
 papers:
   QPEhFegAAAAJ:2P1L_qKh6hAC:
     citations: 0
     title: Segmentation Confidence for Arbitrary CNNS
     year: '2026'
   QPEhFegAAAAJ:2osOgNQ5qMEC:
-    citations: 5
+    citations: 4
     title: A multiple instance learning approach for detecting covid-19 in peripheral blood smears
     year: '2022'
   QPEhFegAAAAJ:35N4QoGY0k4C:
@@ -18,7 +18,7 @@ papers:
     title: 448 Deformable Medial Modeling to Generate Novel Shape Features of the Placenta Using Automated versus Manual Segmentations
     year: '2024'
   QPEhFegAAAAJ:4TOpqqG69KYC:
-    citations: 8
+    citations: 10
     title: 'Adaptdiff: Cross-modality domain adaptation via weak conditional semantic diffusion for retinal vessel segmentation'
     year: '2024'
   QPEhFegAAAAJ:5nxA0vEk-isC:
@@ -34,8 +34,8 @@ papers:
     title: Adaptive Spectral Estimation Improves Preeclampsia Prediction when using Short Pulsed Wave Doppler Acquisition Duration
     year: '2025'
   QPEhFegAAAAJ:LkGwnXOMwfcC:
-    citations: 8
-    title: 'Cats v2: hybrid encoders for robust medical segmentation'
+    citations: 9
+    title: 'CATS v2: hybrid encoders for robust medical segmentation'
     year: '2024'
   QPEhFegAAAAJ:M3NEmzRMIkIC:
     citations: 6
@@ -55,8 +55,8 @@ papers:
     year: '2025'
   QPEhFegAAAAJ:RYcK_YlVTxYC:
     citations: 1
-    title: 'Endo-SemiS: Towards Robust Semi-Supervised Image Segmentation for Endoscopic Video'
-    year: '2025'
+    title: 'Endo-semis: Towards robust semi-supervised image segmentation for endoscopic video'
+    year: '2026'
   QPEhFegAAAAJ:Se3iqnhoufwC:
     citations: 9
     title: 'Samsnerf: Segment anything model (sam) guides dynamic surgical scene reconstruction by neural radiance field (nerf)'
@@ -78,7 +78,7 @@ papers:
     title: 'Surgical tool classification and localization: results and methods from the miccai 2022 surgtoolloc challenge'
     year: '2023'
   QPEhFegAAAAJ:Y0pCki6q_DkC:
-    citations: 38
+    citations: 37
     title: Imaging across multiple spatial scales with the multi-camera array microscope
     year: '2023'
   QPEhFegAAAAJ:YOwf2qJgpHMC:
@@ -99,7 +99,7 @@ papers:
     year: '2023'
   QPEhFegAAAAJ:_Qo2XoVZTnwC:
     citations: 4
-    title: 'LOTUS: Latent Outpainting Diffusion Model for Three-Dimensional Ultrasound Stitching'
+    title: 'Lotus: Latent outpainting diffusion model for three-dimensional ultrasound stitching'
     year: '2025'
   QPEhFegAAAAJ:aqlVkmm33-oC:
     citations: 7
@@ -110,21 +110,17 @@ papers:
     title: "Increasing a microscope\u2019s effective field of view via overlapped imaging and machine learning"
     year: '2022'
   QPEhFegAAAAJ:hMod-77fHWUC:
-    citations: 2
+    citations: 1
     title: 'Intuitive Surgical SurgToolLoc Challenge Results: 2022-2023'
     year: '2023'
   QPEhFegAAAAJ:kNdYIx-mwKoC:
-    citations: 26
+    citations: 27
     title: 'FNPC-SAM: uncertainty-guided false negative/positive control for SAM on noisy medical images'
     year: '2024'
   QPEhFegAAAAJ:k_IJM867U9cC:
     citations: 3
     title: Self-supervised ultrasound video frame interpolation based on conditional latent diffusion model
     year: '2025'
-  QPEhFegAAAAJ:ldfaerwXgEUC:
-    citations: 4
-    title: 'Medical Imaging 2024: Image Processing'
-    year: '2024'
   QPEhFegAAAAJ:maZDTaKrznsC:
     citations: 1
     title: Enhancing skin lesion classification using segmentation-based global-local feature fusion
@@ -138,6 +134,6 @@ papers:
     title: 'Vesselmorph: domain-generalized retinal vessel segmentation via shape-aware representation'
     year: '2023'
   QPEhFegAAAAJ:zYLM7Y9cAGgC:
-    citations: 93
+    citations: 94
     title: 'Min-max similarity: A contrastive semi-supervised deep learning network for surgical tools segmentation'
     year: '2023'
