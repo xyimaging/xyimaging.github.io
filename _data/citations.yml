@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-08-03'
+  last_updated: '2026-08-21'
 papers:
   QPEhFegAAAAJ:2P1L_qKh6hAC:
     citations: 0
     title: Segmentation Confidence for Arbitrary CNNS
     year: '2026'
   QPEhFegAAAAJ:2osOgNQ5qMEC:
-    citations: 4
+    citations: 5
     title: A multiple instance learning approach for detecting covid-19 in peripheral blood smears
     year: '2022'
   QPEhFegAAAAJ:35N4QoGY0k4C:
@@ -18,7 +18,7 @@ papers:
     title: 448 Deformable Medial Modeling to Generate Novel Shape Features of the Placenta Using Automated versus Manual Segmentations
     year: '2024'
   QPEhFegAAAAJ:4TOpqqG69KYC:
-    citations: 10
+    citations: 11
     title: 'Adaptdiff: Cross-modality domain adaptation via weak conditional semantic diffusion for retinal vessel segmentation'
     year: '2024'
   QPEhFegAAAAJ:5nxA0vEk-isC:
@@ -78,7 +78,7 @@ papers:
     title: 'Surgical tool classification and localization: results and methods from the miccai 2022 surgtoolloc challenge'
     year: '2023'
   QPEhFegAAAAJ:Y0pCki6q_DkC:
-    citations: 37
+    citations: 38
     title: Imaging across multiple spatial scales with the multi-camera array microscope
     year: '2023'
   QPEhFegAAAAJ:YOwf2qJgpHMC:
@@ -110,7 +110,7 @@ papers:
     title: "Increasing a microscope\u2019s effective field of view via overlapped imaging and machine learning"
     year: '2022'
   QPEhFegAAAAJ:hMod-77fHWUC:
-    citations: 1
+    citations: 2
     title: 'Intuitive Surgical SurgToolLoc Challenge Results: 2022-2023'
     year: '2023'
   QPEhFegAAAAJ:kNdYIx-mwKoC:
