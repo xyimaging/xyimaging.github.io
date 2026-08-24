@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-08-21'
+  last_updated: '2026-08-24'
 papers:
   QPEhFegAAAAJ:2P1L_qKh6hAC:
     citations: 0
@@ -114,7 +114,7 @@ papers:
     title: 'Intuitive Surgical SurgToolLoc Challenge Results: 2022-2023'
     year: '2023'
   QPEhFegAAAAJ:kNdYIx-mwKoC:
-    citations: 27
+    citations: 28
     title: 'FNPC-SAM: uncertainty-guided false negative/positive control for SAM on noisy medical images'
     year: '2024'
   QPEhFegAAAAJ:k_IJM867U9cC:
