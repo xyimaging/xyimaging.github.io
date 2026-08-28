@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-08-24'
+  last_updated: '2026-08-28'
 papers:
   QPEhFegAAAAJ:2P1L_qKh6hAC:
     citations: 0
@@ -18,7 +18,7 @@ papers:
     title: 448 Deformable Medial Modeling to Generate Novel Shape Features of the Placenta Using Automated versus Manual Segmentations
     year: '2024'
   QPEhFegAAAAJ:4TOpqqG69KYC:
-    citations: 11
+    citations: 12
     title: 'Adaptdiff: Cross-modality domain adaptation via weak conditional semantic diffusion for retinal vessel segmentation'
     year: '2024'
   QPEhFegAAAAJ:5nxA0vEk-isC:
@@ -78,7 +78,7 @@ papers:
     title: 'Surgical tool classification and localization: results and methods from the miccai 2022 surgtoolloc challenge'
     year: '2023'
   QPEhFegAAAAJ:Y0pCki6q_DkC:
-    citations: 38
+    citations: 39
     title: Imaging across multiple spatial scales with the multi-camera array microscope
     year: '2023'
   QPEhFegAAAAJ:YOwf2qJgpHMC:
